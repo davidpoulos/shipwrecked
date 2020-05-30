@@ -1,0 +1,6 @@
+# CWD -> Absolute PATH
+CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+docker build --no-cache \
+    -t davidpoulos/shipwrecked:0.0.1 \
+    ${CWD}/../

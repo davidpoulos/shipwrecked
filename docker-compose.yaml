@@ -1,0 +1,32 @@
+version: '3.7'
+services: 
+  go:
+    container_name: shipwreck
+    image: golang:1.14.3-stretch
+    command: sleep infinity
+    volumes: 
+      - .:/go
+    ports: 
+      - 8080:8080
+    networks: 
+      - pirate-sail
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch:7.7.0
+    environment: 
+      - discovery.type=single-node
+    ports: 
+      - 9300:9300
+      - 9200:9200
+    networks: 
+      - pirate-sail
+  kibana:
+    container_name:  kibana
+    image: kibana:7.7.0
+    ports: 
+      - 5601:5601
+    networks: 
+      - pirate-sail
+      
+networks: 
+  pirate-sail:

@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipwrecked-svc
+spec:
+  selector:
+    app: shipwrecked
+  ports:
+  - port: 80
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipwrecked-deploy
+spec:
+  selector:
+    matchLabels:
+      app: shipwrecked
+  template:
+    metadata:
+      labels:
+        app: shipwrecked
+    spec:
+      containers:
+      - name: shipwrecked
+        image: davidpoulos/shipwrecked:0.0.1
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "2"
+        ports:
+        - containerPort: 8080

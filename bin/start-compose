@@ -1,0 +1,4 @@
+# CWD -> Absolute PATH
+CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+docker-compose -f ${CWD}/../docker-compose.yaml up
