@@ -6,6 +6,7 @@ import "github.com/elastic/go-elasticsearch/v7"
 type Shipwreck struct {
 	Name            string
 	Coordinates     string
+	YearBuilt       int
 	YearSank        int
 	Depth           string
 	DifficultyLevel string
