@@ -1,6 +1,7 @@
 package scraper
 
 import (
+	"encoding/json"
 	"fmt"
 	"strconv"
 	"strings"
@@ -28,7 +29,8 @@ func ScrapeWebsite() {
 		r := ExtractShipWreckInfo(e)
 		fmt.Printf("%v\n", r)
 
-		// JSON marshall -> Write to file
+		b, _ := json.Marshal(r)
+		fmt.Printf("%s", string(b))
 
 	})
 

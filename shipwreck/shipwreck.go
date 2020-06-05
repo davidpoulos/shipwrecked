@@ -4,14 +4,14 @@ import "github.com/elastic/go-elasticsearch/v7"
 
 // Shipwreck ...
 type Shipwreck struct {
-	Name            string
-	Coordinates     string
-	YearBuilt       int
-	YearSank        int
-	Depth           string
-	DifficultyLevel string
-	Latitude        string
-	Longitude       string
+	Name            string `json:"name"`
+	Coordinates     string `json:"coordinates"`
+	YearBuilt       int    `json:"yearBuilt"`
+	YearSank        int    `json:"yearSank"`
+	Depth           string `json:"depth"`
+	DifficultyLevel string `json:"difficultyLevel"`
+	Latitude        string `json:"latitude"`
+	Longitude       string `json:"longitude"`
 }
 
 // New ...
