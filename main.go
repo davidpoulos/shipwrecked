@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	scraper.ScrapeWebsite()
+	scraper.ScrapeShipWreckWorldSite()
 }
 
 func launchServer() {
