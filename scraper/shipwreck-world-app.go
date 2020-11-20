@@ -392,7 +392,7 @@ func ExtractShipWreckInfo(e *colly.HTMLElement) *shipwreck.Shipwreck {
 		YearBuilt:       CleanYearBuilt(yearBuilt),
 		DifficultyLevel: CleanDifficultyLevel(difficultyLevel),
 		Depth:           CleanDepth(depth),
-		Coordinates:     CleanLatitude(latitude) + " " + CleanLongitude(longitude),
+		Coordinates:     CleanLatitude(latitude) + "," + CleanLongitude(longitude),
 	}
 }
 

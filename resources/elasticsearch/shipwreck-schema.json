@@ -1,0 +1,20 @@
+{
+    "settings": {
+        "index" : {
+            "number_of_shards" : 4, 
+            "number_of_replicas" : 0
+        }
+    },
+    "mappings" : {
+        "properties" : {
+            "name" :     { "type" : "text" },
+            "yearBuilt": { "type": "short" },
+            "yearSank":  { "type": "short" },
+            "latitude":  { "type": "double" },
+            "longitude": { "type": "double" },
+            "depth":     { "type": "text" },
+            "coordinates": { "type": "geo_point" }
+            
+        }
+    }
+}
